@@ -70,26 +70,67 @@
         let poblacion = document.getElementById("poblacion").value.toLowerCase()
         let extension = document.getElementById("extension").value.toLowerCase()
         const result = document.getElementById("resultado4")
-        const ciudad = new Object()
-        ciudad.nombre = nombre
-        ciudad.fundacion = fundacion
-        ciudad.poblacion = poblacion
-        ciudad.extension = extension
+        const ciudad = {
+          nombre: nombre,
+          fundacion: fundacion,
+          poblacion: poblacion,
+          extension: extension
+        }
+        
         for(const propiedad in ciudad){
           result.innerHTML = `${propiedad}: ${ciudad[propiedad]}`
         }
     }
 
     function ejercicio5(){
-        
+
+        let textoIngresado = document.getElementById("numeros").value;
+        let partesSeparadas = textoIngresado.split("-");
+        let duplicados = partesSeparadas.map(function(valor) {
+          return valor * 2;
+        });
+      
+        document.getElementById("resultado5").innerHTML = duplicados;
     }
 
+
     function ejercicio6(){
-        
+ 
+        console.log("Primer dibujo:");
+        let dibujo1 = [];
+        for (let i = 1; i <= 6; i++) {
+          let fila = "*".repeat(i);
+          dibujo1.push(fila);
+        }
+        dibujo1.forEach(linea => console.log(linea));
+      
+
+        console.log("\nSegundo dibujo:");
+        let dibujo2 = [];
+        for (let i = 1; i <= 5; i++) {
+          let asteriscos = "*".repeat(2 * i - 1);
+          let guiones = "-".repeat(5 - i);
+          let fila = guiones + asteriscos + guiones;
+          dibujo2.push(fila);
+        }
+        dibujo2.forEach(linea => console.log(linea));
+      
     }
 
     function ejercicio7(){
-        
+      const entrada = document.getElementById("nombres").value;
+      const nombres = entrada.split(",");
+      const resultado = document.getElementById("resultado7");
+      resultado.innerHTML = "";
+    
+      for (let i = 0; i < nombres.length; i++) {
+        const nombre = nombres[i].trim();
+        if (nombre.startsWith("A") || nombre.startsWith("a")) {
+          const item = document.createElement("li");
+          item.textContent = nombre;
+          resultado.appendChild(item);
+        }
+      }
     }
 
     function ejercicio8(){
