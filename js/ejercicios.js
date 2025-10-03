@@ -135,17 +135,42 @@
 
     function ejercicio8(){
         
+   let texto = document.getElementById("nombre8").value;
+   let aRemplazar = document.getElementById("aRemplazar").value;
+   let Remplazo = document.getElementById("Remplazo").value;
+   const res =  texto.replace(aRemplazar,Remplazo);
+   document.getElementById("resultado").innerHTML = "texto original = " + texto + "<br>" + "nuevo texto = "+  res + "<br>";
+
+
     }
 
     function ejercicio9(){
         
+   let texto = document.getElementById("nombre9").value;
+   let bc = document.getElementById("num9").value;
+   document.getElementById("resultado").innerHTML = texto.slice(0, bc);
     }
 
     function ejercicio10(){
         
+   let texto = document.getElementById("nombre10").value;
+   const res =  texto.replace(",","-");
+   document.getElementById("resultado").innerHTML = res;
     }
 
     function ejercicio11(){
         
+   let texto = document.getElementById("nombre11").value;
+
+   let partes = texto.split(",");
+   let suma = 0;
+   for (let parte of partes) {
+       let [nombre, valor] = parte.split(":");
+
+       if (valor) {
+           suma += Number(valor.trim());
+       }
+   }
+   document.getElementById("resultado").innerHTML = suma;
     }
 
